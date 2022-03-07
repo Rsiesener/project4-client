@@ -1,0 +1,22 @@
+.navTitle {
+  border: 2px solid red;
+  color: white;
+  margin-left: 20%;
+}
+
+.navDropdown {
+  border: 2px solid red;
+  height: 2rem;
+  width: 10%;
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+  border: 2px solid green;
+  width: 100%;
+}
+
+.navLinks {
+  border: 2px solid purple;
+}

@@ -39,12 +39,12 @@ const authenticatedDropdown = (
 const Header = ({ user }) => (
   <Navbar bg='secondary' variant='dark' expand='md'>
     <Container>
-      <div>
-        {user ? authenticatedDropdown : <div></div>}
-      </div>
+      {user ? authenticatedDropdown : <div></div>}
       <Navbar.Brand>
-        <Link className='justify-content-center' to='/' style={{ color: '#FFF', textDecoration: 'none' }}>
-          Chalkboard
+        <Link
+          to='/'
+          style={{ color: '#FFF', textDecoration: 'none' }}>
+                Chalkboard
         </Link>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls='basic-navbar-nav' />
