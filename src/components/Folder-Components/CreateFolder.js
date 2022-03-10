@@ -7,9 +7,9 @@ const CreateFolder = ({ user, msgAlert }) => {
 
   const handleSubmit = async event => {
     event.preventDefault()
-
+    const newFolder = { folder_name: folder }
     try {
-      const res = await createFolder(folder, user)
+      const res = await createFolder(newFolder, user)
       setCreatedId(res.data.folder._id)
       msgAlert({
         heading: 'Folder Created',
@@ -34,7 +34,6 @@ const CreateFolder = ({ user, msgAlert }) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <button>Create Folder</button>
         <label>
           Folder Name:
           <input
@@ -43,6 +42,7 @@ const CreateFolder = ({ user, msgAlert }) => {
             value={folder.folder_name}
             onChange={event => setFolder(event.target.value)}
           />
+          <button>Create Folder</button>
         </label>
       </form>
     </div>

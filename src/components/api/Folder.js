@@ -37,10 +37,10 @@ import axios from 'axios'
 //   )
 // }
 
-export const createFolder = (title, director, user) => {
+export const createFolder = (folder, user) => {
   return axios.post(
     `${apiUrls}/folders/`,
-    { movie: { title, director } },
+    { folder },
     {
       headers: {
         Authorization: `Token ${user.token}`

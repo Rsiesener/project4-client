@@ -12,6 +12,7 @@ import ChangePassword from './components/auth/ChangePassword'
 import styles from './components/styles/BodyContainer.module.css'
 import CreateFolder from './components/Folder-Components/CreateFolder'
 import Home from './components/Home-Component/Home'
+import FileContainer from './components/File-Container-Component/FileContainer'
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -38,7 +39,7 @@ const App = () => {
           />
         ))}
         <div className={styles.fileContainer}>
-
+          <FileContainer />
         </div>
         <main className={styles.content}>
           <Routes>
