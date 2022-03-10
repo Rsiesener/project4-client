@@ -5,18 +5,19 @@ import Container from 'react-bootstrap/Container'
 import { Link, NavLink } from 'react-router-dom'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown'
+import { LinkContainer } from 'react-router-bootstrap'
 
 const authenticatedOptions = (
   <>
-    <NavLink to='/change-password' className='nav-link'>Change Password</NavLink>
-    <NavLink to='/sign-out' className='nav-link'>Sign Out</NavLink>
+    <NavLink to='change-pw/' className='nav-link'>Change Password</NavLink>
+    <NavLink to='sign-out/' className='nav-link'>Sign Out</NavLink>
   </>
 )
 
 const unauthenticatedOptions = (
   <>
-    <NavLink to='/sign-up' className='nav-link'>Sign Up</NavLink>
-    <NavLink to='/sign-in' className='nav-link'>Sign In</NavLink>
+    <NavLink to='sign-up/' className='nav-link'>Sign Up</NavLink>
+    <NavLink to='sign-in/' className='nav-link'>Sign In</NavLink>
   </>
 )
 
@@ -29,7 +30,9 @@ const alwaysOptions = (
 const authenticatedDropdown = (
   <>
     <DropdownButton id='dropdown-basic-button' title='Dropdown button'>
-      <Dropdown.Item href='#/action-1'>Action</Dropdown.Item>
+      <LinkContainer to='create-folder/'>
+        <Dropdown.Item>New Folder</Dropdown.Item>
+      </LinkContainer>
       <Dropdown.Item href='#/action-2'>Another action</Dropdown.Item>
       <Dropdown.Item href='#/action-3'>Something else</Dropdown.Item>
     </DropdownButton>

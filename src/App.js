@@ -10,6 +10,7 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import styles from './components/styles/BodyContainer.module.css'
+import CreateFolder from './components/Folder-Components/CreateFolder'
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -23,9 +24,9 @@ const App = () => {
   }
 
   return (
-    <div className={styles.container} style={{ backgroundImage: 'url(\'https://wallpaperaccess.com/full/1390896.jpg\')' }}>
+    <div className={styles.container}>
       <Header user={user} />
-      <div className={styles.body}>
+      <div className={styles.body} style={{ backgroundImage: 'url(\'https://wallpaperaccess.com/full/1390896.jpg\')' }}>
         {msgAlerts.map((msgAlert) => (
           <AutoDismissAlert
             key={msgAlert.id}
@@ -38,15 +39,15 @@ const App = () => {
         <main className={styles.content}>
           <Routes>
             <Route
-              path='/sign-up'
+              path='sign-up/'
               element={<SignUp msgAlert={msgAlert} setUser={setUser} />}
             />
             <Route
-              path='/sign-in'
+              path='sign-in/'
               element={<SignIn msgAlert={msgAlert} setUser={setUser} />}
             />
             <Route
-              path='/sign-out'
+              path='sign-out/'
               element={
                 <SignOut
                   msgAlert={msgAlert}
@@ -56,8 +57,12 @@ const App = () => {
               }
             />
             <Route
-              path='/change-password'
+              path='change-pw/'
               element={<ChangePassword msgAlert={msgAlert} user={user} />}
+            />
+            <Route
+              path='/create-folder/'
+              element={<CreateFolder msgAlert={msgAlert} user={user} />}
             />
           </Routes>
         </main>
