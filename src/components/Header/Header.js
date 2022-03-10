@@ -3,9 +3,6 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import { Link, NavLink } from 'react-router-dom'
-import DropdownButton from 'react-bootstrap/DropdownButton'
-import Dropdown from 'react-bootstrap/Dropdown'
-import { LinkContainer } from 'react-router-bootstrap'
 
 const authenticatedOptions = (
   <>
@@ -27,22 +24,9 @@ const alwaysOptions = (
   </>
 )
 
-const authenticatedDropdown = (
-  <>
-    <DropdownButton id='dropdown-basic-button' title='Dropdown button'>
-      <LinkContainer to='create-folder/'>
-        <Dropdown.Item>New Folder</Dropdown.Item>
-      </LinkContainer>
-      <Dropdown.Item href='#/action-2'>Another action</Dropdown.Item>
-      <Dropdown.Item href='#/action-3'>Something else</Dropdown.Item>
-    </DropdownButton>
-  </>
-)
-
 const Header = ({ user }) => (
   <Navbar bg='secondary' variant='dark' expand='md'>
     <Container>
-      {user ? authenticatedDropdown : <div></div>}
       <Navbar.Brand>
         <Link
           to='/'

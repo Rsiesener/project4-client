@@ -21,3 +21,12 @@
   height: 95%;
   width:80%;
 }
+
+.fileContainer {
+  border: 2px solid green;
+  height: 95%;
+  width: 10%;
+  margin-right: 5px;
+  background-color: black;
+  opacity: 25%;
+}

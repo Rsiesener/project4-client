@@ -11,6 +11,7 @@ import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import styles from './components/styles/BodyContainer.module.css'
 import CreateFolder from './components/Folder-Components/CreateFolder'
+import Home from './components/Home-Component/Home'
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -36,8 +37,12 @@ const App = () => {
             id={msgAlert.id}
           />
         ))}
+        <div className={styles.fileContainer}>
+
+        </div>
         <main className={styles.content}>
           <Routes>
+            <Route path='home/' user={user} />
             <Route
               path='sign-up/'
               element={<SignUp msgAlert={msgAlert} setUser={setUser} />}
@@ -61,7 +66,7 @@ const App = () => {
               element={<ChangePassword msgAlert={msgAlert} user={user} />}
             />
             <Route
-              path='/create-folder/'
+              path='create-folder/'
               element={<CreateFolder msgAlert={msgAlert} user={user} />}
             />
           </Routes>
