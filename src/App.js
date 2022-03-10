@@ -42,7 +42,7 @@ const App = () => {
         </div>
         <main className={styles.content}>
           <Routes>
-            <Route path='home/' user={user} />
+            <Route path='/' element={<Home user={user} />} />
             <Route
               path='sign-up/'
               element={<SignUp msgAlert={msgAlert} setUser={setUser} />}
