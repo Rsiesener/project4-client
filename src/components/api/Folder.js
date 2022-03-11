@@ -1,13 +1,13 @@
 import apiUrls from '../../apiConfig'
 import axios from 'axios'
 
-// export const indexFolders = (user) => {
-//   return axios.get(apiUrls + '/movies/', {
-//     headers: {
-//       Authorization: `Token ${user.token}`
-//     }
-//   })
-// }
+export const indexFolders = (user) => {
+  return axios.get(apiUrls + '/folders/', {
+    headers: {
+      Authorization: `Token ${user.token}`
+    }
+  })
+}
 
 // export const showFolder = (id, user) => {
 //   return axios.get(`${apiUrls}/movies/${id}/`, {

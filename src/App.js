@@ -25,6 +25,12 @@ const App = () => {
     setMsgAlerts(msgAlerts => ([...msgAlerts, { heading, message, variant, id }]))
   }
 
+  const authenticatedFolderTab = (
+    <div className={styles.fileContainer}>
+      <FileContainer user={user} />
+    </div>
+  )
+
   return (
     <div className={styles.container}>
       <Header user={user} />
@@ -38,9 +44,7 @@ const App = () => {
             id={msgAlert.id}
           />
         ))}
-        <div className={styles.fileContainer}>
-          <FileContainer />
-        </div>
+        {user && authenticatedFolderTab}
         <main className={styles.content}>
           <Routes>
             <Route path='/' element={<Home user={user} />} />
