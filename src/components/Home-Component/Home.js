@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from '../styles/HomePageBody.module.css'
 import { Navigate } from 'react-router-dom'
-import Folder from '../Folder-Components/ShowFolder'
+// import Folder from '../Folder-Components/ShowFolder'
 
 const Home = ({ user }) => {
   if (!user) {
@@ -10,7 +10,7 @@ const Home = ({ user }) => {
   return (
     <>
       <div className={styles.content}>
-        <Folder />
+        {/* <Folder /> */}
       </div>
       <div className={styles.media}>
         <div className={styles.video}>

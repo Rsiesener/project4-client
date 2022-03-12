@@ -10,7 +10,7 @@ const UpdateFolder = ({ user, msgAlert }) => {
     const updatedFolder = { folder_name: folder }
     try {
       const res = await createFolder(updatedFolder, user)
-      setCreatedId(res.data.folder._id)
+      setCreatedId(res.data.folder.id)
       msgAlert({
         heading: 'Folder Updated',
         message: `Updated ${folder} successfully.`,
