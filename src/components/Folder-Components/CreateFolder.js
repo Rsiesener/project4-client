@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Navigate } from 'react-router-dom'
 import { createFolder } from '../api/Folder'
-const CreateFolder = ({ user, msgAlert }) => {
+const CreateFolder = ({ user, msgAlert, setRequestData }) => {
   const [folder, setFolder] = useState('')
   const [createdId, setCreatedId] = useState(null)
 
@@ -10,7 +10,7 @@ const CreateFolder = ({ user, msgAlert }) => {
     const newFolder = { folder_name: folder }
     try {
       const res = await createFolder(newFolder, user)
-      setCreatedId(res.data.folder._id)
+      setCreatedId(res.data.folder.id)
       msgAlert({
         heading: 'Folder Created',
         message: `Created ${folder} successfully.`,
@@ -28,7 +28,7 @@ const CreateFolder = ({ user, msgAlert }) => {
   if (!user) {
     return <Navigate to='/' />
   } else if (createdId) {
-    return <Navigate to={`/folders/${createdId}`} />
+    return <Navigate to='/home/' />
   }
 
   return (

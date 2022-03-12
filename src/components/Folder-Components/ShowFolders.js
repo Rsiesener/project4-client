@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, Navigate } from 'react-router-dom'
 import { indexFolders } from '../api/Folder'
+import styles from '../styles/UpdateAndDeleteButtonse.modules.css'
 
 const ShowFolders = ({ user }) => {
   const [folders, setFolders] = useState([])
@@ -22,11 +23,14 @@ const ShowFolders = ({ user }) => {
   }, [])
 
   if (folders.length === 0) {
-    return <Link to='create-folder/'><button>New Folder</button></Link>
+    return <Link to='/folder/create/'><button>New Folder</button></Link>
   } else {
     const foldersList = folders.map((folder) => (
-      <li key={folder._id}>
-        <Link to={`folders/${folder._id}`}>{folder.folder_name}</Link>
+      <li key={folder.id}>
+        <Link to={`/folders/${folder.id}`}>
+          {folder.folder_name}
+          <button className={styles.updateBtn}>📝</button>
+        </Link>
       </li>
     ))
 

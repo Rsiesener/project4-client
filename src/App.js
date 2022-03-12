@@ -12,7 +12,10 @@ import ChangePassword from './components/auth/ChangePassword'
 import styles from './components/styles/BodyContainer.module.css'
 import CreateFolder from './components/Folder-Components/CreateFolder'
 import Home from './components/Home-Component/Home'
+import LandingPage from './components/LandingPage/LandingPage'
 import FileContainer from './components/File-Container-Component/FileContainer'
+import UpdateFolder from './components/Folder-Components/UpdateFolder'
+import Folder from './components/Folder-Components/ShowFolder'
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -47,7 +50,8 @@ const App = () => {
         {user && authenticatedFolderTab}
         <main className={styles.content}>
           <Routes>
-            <Route path='/' element={<Home user={user} />} />
+            <Route path='/' element={<LandingPage msgAlert={msgAlert} setUser={setUser} />} />
+            <Route path='home/' element={<Home user={user} />} />
             <Route
               path='sign-up/'
               element={<SignUp msgAlert={msgAlert} setUser={setUser} />}
@@ -71,9 +75,11 @@ const App = () => {
               element={<ChangePassword msgAlert={msgAlert} user={user} />}
             />
             <Route
-              path='create-folder/'
+              path='/folders/create/'
               element={<CreateFolder msgAlert={msgAlert} user={user} />}
             />
+            <Route path='/folders/:id/' element={<Folder msgAlert={msgAlert} user={user} />} />
+            <Route path='/folders/:id/edit/' element={<UpdateFolder msgAlert={msgAlert} user={user} />} />
           </Routes>
         </main>
       </div>

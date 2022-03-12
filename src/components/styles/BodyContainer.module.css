@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
 .container {
   display: flex;
   flex-direction: column;
@@ -17,9 +18,12 @@
 }
 
 .content {
+  display: flex;
+  justify-content: center;
   border: 2px solid blue;
   height: 95%;
   width:80%;
+  font-size: 2rem;
 }
 
 .fileContainer {
@@ -27,6 +31,7 @@
   height: 95%;
   width: 10%;
   margin-right: 5px;
-  background-color: black;
-  opacity: 25%;
+  background-color: inherit;
+  font-size: 109%;
+  overflow: auto;
 }
