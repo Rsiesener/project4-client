@@ -18,7 +18,7 @@ export const showFolder = (id, user) => {
 }
 
 export const deleteFolder = (id, user) => {
-  return axios.delete(`${apiUrls}/folders/${id}`, {
+  return axios.delete(`${apiUrls}/folders/${id}/`, {
     headers: {
       Authorization: `Token ${user.token}`
     }
@@ -27,7 +27,7 @@ export const deleteFolder = (id, user) => {
 
 export const updateFolder = (folder, id, user) => {
   return axios.patch(
-    `${apiUrls}/movies/${id}`,
+    `${apiUrls}/folders/${id}/`,
     { folder },
     {
       headers: {

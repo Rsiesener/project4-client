@@ -53,7 +53,7 @@ const Folder = ({ user, msgAlert }) => {
           <Button variant='danger' onClick={handleDeleteClick}>
             Delete Folder
           </Button>
-          <Link to={`/movies/${id}/edit`}>
+          <Link to={`/folders/${id}/edit/`}>
             <Button variant='primary' type='submit'>
               Update Folder
             </Button>

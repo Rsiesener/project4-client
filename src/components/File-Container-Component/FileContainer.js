@@ -6,7 +6,7 @@ const FileContainer = ({ user }) => {
   return (
     <>
       <div>
-        <Link to='create-folder/'>
+        <Link to='folders/create/'>
           <button>New Folder</button>
         </Link>
         <Link to='create-file/'>

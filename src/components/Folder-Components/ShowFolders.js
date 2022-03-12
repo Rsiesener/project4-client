@@ -27,7 +27,7 @@ const ShowFolders = ({ user }) => {
   } else {
     const foldersList = folders.map((folder) => (
       <li key={folder.id}>
-        <Link to={`/folders/${folder.id}`}>
+        <Link to={`/folders/${folder.id}/`}>
           {folder.folder_name}
           <button className={styles.updateBtn}>📝</button>
         </Link>

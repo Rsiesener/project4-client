@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
-import { Navigate } from 'react-router-dom'
-import { createFolder } from '../api/Folder'
+import { Navigate, useParams } from 'react-router-dom'
+import { updateFolder } from '../api/Folder'
 const UpdateFolder = ({ user, msgAlert }) => {
   const [folder, setFolder] = useState('')
   const [createdId, setCreatedId] = useState(null)
+  const { id } = useParams()
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event, id) => {
     event.preventDefault()
     const updatedFolder = { folder_name: folder }
     try {
-      const res = await createFolder(updatedFolder, user)
+      const res = await updateFolder(updatedFolder, id, user)
       setCreatedId(res.data.folder.id)
       msgAlert({
         heading: 'Folder Updated',
@@ -33,7 +34,7 @@ const UpdateFolder = ({ user, msgAlert }) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={(event) => handleSubmit(event, id)}>
         <label>
           Folder Name:
           <input
